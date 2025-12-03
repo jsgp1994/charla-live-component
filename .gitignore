@@ -1,10 +1,47 @@
-
-###> symfony/framework-bundle ###
-/.env.local
-/.env.local.php
-/.env.*.local
-/config/secrets/prod/prod.decrypt.private.php
-/public/bundles/
-/var/
+# Composer / PHP
 /vendor/
-###< symfony/framework-bundle ###
+composer.phar
+
+# Environment
+/.env
+/.env.local
+/.env.*.local
+/.env.local.php
+
+# Symfony runtime
+/var/
+/var/*
+
+# Public build artifacts
+/public/build/
+/public/hot/
+/public/bundles/
+
+# Node / frontend
+/node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Build / dist
+/build/
+/dist/
+
+# PHPUnit
+.phpunit.result.cache
+phpunit.xml
+
+# IDEs and editors
+/.idea/
+/.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs and temp
+*.log
+*.cache
+*.tmp
+/tmp/
+

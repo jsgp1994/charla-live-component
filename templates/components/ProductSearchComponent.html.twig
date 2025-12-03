@@ -1,0 +1,107 @@
+<div {{ attributes }}>
+    <div class="product-search">
+        <h3>Buscar Productos</h3>
+
+        <div class="search-input-group">
+            <input
+                type="text"
+                data-model="debounce(300)|query"
+                placeholder="Escribe para buscar productos..."
+                class="form-control"
+            />
+        </div>
+
+        <div class="search-results">
+            {% if query %}
+                {% set products = this.products %}
+
+                {% if products|length > 0 %}
+                    <ul class="product-list">
+                        {% for product in products %}
+                            <li class="product-item">
+                                <strong>{{ product.name }}</strong>
+                                <p>{{ product.description }}</p>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p class="no-results">No se encontraron productos</p>
+                {% endif %}
+            {% else %}
+                <p class="info-text">Escribe algo para comenzar la búsqueda</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <style>
+        .product-search {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .search-input-group {
+            margin: 15px 0;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.2rem;
+            font-size: 16px;
+            border: 2px solid #dee2e6;
+            border-radius: 6px;
+            transition: border-color 0.3s;
+        }
+
+
+        .form-control:focus {
+            outline: none;
+            border-color: #0d6efd;
+        }
+
+        .search-results {
+            margin-top: 20px;
+        }
+
+        .product-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .product-item {
+            background: white;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            border-left: 4px solid #0d6efd;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .product-item strong {
+            color: #212529;
+            font-size: 18px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .product-item p {
+            color: #6c757d;
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .no-results, .info-text {
+            text-align: center;
+            color: #6c757d;
+            padding: 20px;
+        }
+
+        h3 {
+            color: #212529;
+            margin-top: 0;
+        }
+    </style>
+</div>

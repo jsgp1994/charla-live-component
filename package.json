@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@hotwired/stimulus": "^3.2.2",
+    "@symfony/stimulus-bridge": "^4.0.1",
+    "@symfony/ux-live-component": "^2.31.0"
+  }
+}

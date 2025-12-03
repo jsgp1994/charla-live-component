@@ -1,1 +1,9 @@
 {% extends 'base.html.twig' %}
+
+{% block title %}Búsqueda de Productos{% endblock %}
+
+{% block body %}
+    <div class="container">
+        {{ component('ProductSearchComponent') }}
+    </div>
+{% endblock %}
