@@ -4,6 +4,8 @@
 
 {% block body %}
     <div class="container">
-        {{ component('ProductSearchComponent') }}
+        <div {{ stimulus_controller('alert') }}>
+            {{ component('ProductSearchComponent') }}
+        </div>
     </div>
 {% endblock %}

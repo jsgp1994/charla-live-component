@@ -1,4 +1,15 @@
 <div {{ attributes }}>
+
+    <button
+        data-action="alert#showNotification"
+        data-alert-message="se llamo directamente a Stimulus."
+    >Generar alert stimulus</button>
+
+    <button
+        data-action="live#action"
+        data-live-action-param="showNotification"
+    >Generar alert LiveComponent</button>
+
     <div class="product-search">
         <h3>Buscar Productos</h3>
 

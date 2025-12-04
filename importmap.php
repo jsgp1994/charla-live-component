@@ -28,4 +28,18 @@ return [
     '@symfony/stimulus-bridge' => [
         'version' => '4.0.1',
     ],
+    'toastr' => [
+        'version' => '2.1.4',
+    ],
+    'jquery' => [
+        'version' => '3.2.1',
+    ],
+    'toastr/build/toastr.min.css' => [
+        'version' => '2.1.4',
+        'type' => 'css',
+    ],
+    'toastr/build/toastr.css' => [
+        'version' => '2.1.4',
+        'type' => 'css',
+    ],
 ];

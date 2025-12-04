@@ -9,15 +9,20 @@ RUN apt-get update && apt-get install -y \
 # Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
-# Node + npm (simple, usando node oficial)
+# Node + npm + yarn
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
     && apt-get install -y nodejs \
     && npm install -g yarn
 
 WORKDIR /var/www/html
 
-# Permisos básicos
-RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
+# Ajustar UID/GID y PERMISOS sobre /var/www
+RUN usermod -u 1000 www-data && groupmod -g 1000 www-data \
+    && chown -R www-data:www-data /var/www
+
+# (opcional, pero recomendable)
+ENV HOME=/var/www
+
 USER www-data
 
 CMD ["php-fpm"]
